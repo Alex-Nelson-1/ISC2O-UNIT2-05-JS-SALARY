@@ -2,6 +2,7 @@
  * Created on: Oct 2022
  * This file contains the JavaScript for index.html
  */
+'use strict'
 /* FUnction */
 function calculatePay() {
   /* Input */
