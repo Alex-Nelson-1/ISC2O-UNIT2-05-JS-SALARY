@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--ICS2O-UNIT1-TEMPLATE-->
+<!--ICS2O-UNIT2-5-JS-SALARY-->
 <html lang="en-ca">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="A Webpage with MDL" />
+    <meta name="description" content="A Webpage with a salary calculator" />
     <meta name="keywords" content="mths isc2o" />
     <meta name="author" content="Alex Nelson" />
     <meta name="viewport" content="width=device-width, initial_scale=1.0" />
@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
-    <title>TEMPLATE</title>
+    <title>Salary Calculator</title>
   </head>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -28,32 +28,49 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header" style="text-align: center">
         <div class="mdl-layout-header-row">
-          <span class="mdl-layout__title">Header</span>
+          <span class="mdl-layout__title">Salary Calculator</span>
         </div>
       </header>
       <main class="mdl-layout__content">
         <!--Text field for Street Name-->
         <form action="#">
-          <h3>Textfield</h3>
+          <h3>Hours Worked</h3>
           <div class="mdl-textfield mdl-js-textfield">
             <input
               class="mdl-textfield__input"
               type="text"
-              pattern="[a-zA-Z]*"
-              id="template"
+              pattern="[0-9]*"
+              id="hoursWorked"
             />
             <!--This will control the textfields error message and label-->
-            <label class="mdl-textfield__label" for="template">Template</label>
+            <label class="mdl-textfield__label" for="hoursWorked">Hours Worked</label>
+            <span class="mdl-textfield__error">Letters Only!</span>
+          </div>
+        </form>
+                <!--Text field for Street Name-->
+        <form action="#">
+          <h3>Hourly Rate</h3>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="[0-9]*"
+              id="hourlyRate"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="hourlyRate">Hourly Rate</label>
             <span class="mdl-textfield__error">Letters Only!</span>
           </div>
         </form>
         <!-- Accent-colored raised button -->
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
-          onclick="myButtonClicked()"
+          onclick="calculatePay()"
         >
-          Enter
+          Pay
         </button>
+        <div id="pay"></div>
+        <div id="governmentPortion"></div>
       </main>
     </div>
   </body>
