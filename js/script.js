@@ -9,6 +9,7 @@ function calculatePay() {
   const hoursWorked = parseFloat(document.getElementById("hoursWorked").value)
   const wage = parseFloat(document.getElementById("hourlyRate").value)
   const TAX_RATE = 0.18
+  /* Proccess */
   const pay = hoursWorked * wage * (1 - TAX_RATE)
   const taxes = hoursWorked * wage * TAX_RATE
   /* Output */
